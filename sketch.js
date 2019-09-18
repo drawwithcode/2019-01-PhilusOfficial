@@ -5,24 +5,16 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
+  noFill();
 
   frameRate(60);
-  background(100);
 }
 
 function draw() {
-  translate(width/2, height/2);
-  rotate(frameCount*3);
-  noFill();
+  strokeWeight(3);
+  line(width/2+200, height/2, cos(frameCount*3)*200+width/2, sin(frameCount*3)*200+height/2);
 
-  stroke(
-    lerpColor(
-    color("aquamarine"),
-    color(255, 0, 68),
-    frameCount/120
-    )
-  );
-  ellipse(100, 0, 250);
+  //ellipse(width/2, height/2, 300, 300);
 
   if(frameCount==120) {noLoop()};
 }
